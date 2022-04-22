@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Basic Page Needs
@@ -44,10 +44,11 @@
     <![endif]-->
 
 </head>
+
 <body>
 
     <header id="masthead" class="site-header site-header-white">
-    <nav id="primary-navigation" class="site-navigation">
+        <nav id="primary-navigation" class="site-navigation">
             <div class="container">
 
                 <div class="navbar-header">
@@ -59,7 +60,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.php">ACCUEIL</a></li>
-                        <li ><a href="galerie.php" >FIGURINES<i class="fa fa-caret-down hidden-xs" aria-hidden="true"></i></a>
+                        <li><a href="galerie.php">FIGURINES<i class="fa fa-caret-down hidden-xs" aria-hidden="true"></i></a>
                         </li>
                         <li><a href="livredor.php">LIVRE D'OR</a></li>
                         <li class="active"><a href="session.php">CONNEXION</a></li>
@@ -80,40 +81,40 @@
 
     <main id="main" class="site-main">
         <!--Formulaire Connexion-->
-<div class="row mt-50">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2 class="text-center heading-separator">Connexion</h2>
-                        <form action="session_action.php" method="post">
-                            <div class="row" id="contenu">
-                            <div class="col-sm-12">
-                                    <div class="form-group">
-                                      <label ">Pseudo:</label>
-                                      <input type="text" class="form-control" name="pseudo" />
-                                    </div>
-                                <div class="col-sm-12 mt-20">
-                                    <div class="form-group">
-                                      <label for="name">Mot de passe:</label>
-                                      <input type="password" class="form-control" name="mdp" />
-                                    </div>
+        <div class="row mt-50">
+            <div class="col-md-8 col-md-offset-2">
+                <h2 class="text-center heading-separator">Connexion</h2>
+                <form action="session_action.php" method="post">
+                    <div class="row" id="contenu">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label ">Pseudo:</label>
+                                      <input type=" text" class="form-control" name="pseudo" />
+                            </div>
+                            <div class="col-sm-12 mt-20">
+                                <div class="form-group">
+                                    <label for="name">Mot de passe:</label>
+                                    <input type="password" class="form-control" name="mdp" />
                                 </div>
-                                <div class="col-sm-12">
+                            </div>
+                            <div class="col-sm-12">
                             </div>
                             <div class="text-center mt-20">
                                 <input class="btn btn-green" type="submit" value="Valider">
                             </div>
                             <!--Bouton si pas de compte-->
-                            <a href="inscription.php" style = "font-size:16px;font-style:italic; color : black">PAS DE COMPTE ?</a>
-                        </form>
-                    </div>
-                </div><!-- /.form -->
-                <br> <br> <br>
+                            <a href="inscription.php" style="font-size:16px;font-style:italic; color : black">PAS DE COMPTE ?</a>
+                </form>
+            </div>
+        </div><!-- /.form -->
+        <br> <br> <br>
     </main><!-- /#main -->
 
-</main><!-- /#main -->
+    </main><!-- /#main -->
 
-<div style="text-align: right;">
+    <div style="text-align: right;">
         <a class="site-title"><span>© 2022 Taleb Aslan | L2 </span></a>
-        </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -126,6 +127,7 @@
     <script src="assets/js/jquery.shuffle.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
     <script src="assets/js/script.js"></script>
-  
+
 </body>
+
 </html>

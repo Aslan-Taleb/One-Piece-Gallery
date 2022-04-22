@@ -1,7 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['login']))
-{
+if (!isset($_SESSION['login'])) {
     //Si la session n'est pas ouverte, redirection vers la page du formulaire
     header("Location:session.php");
 }
@@ -31,30 +30,29 @@ if ($_GET['tickets']) {
     $resultat2 = $mysqli->query($requete2);
     header("Location:admin_visiteurs.php");
 }
-    //Ajout Visiteur
-    if ($_GET["tickets_ajout"] and $_GET["mdp"]) {
-        $ticket = htmlspecialchars($_GET['tickets_ajout']);
-        $mdp = htmlspecialchars($_GET['mdp']);
-        $requete = "select vis_num from t_visiteur_vis where vis_num = '" . $ticket . "';";
-        $resultat =   $resultat = $mysqli->query($requete);
-        if ($resultat->num_rows == 1) {
-            header("Location:admin_visiteurs.php");
-        } else {
-            $requete2 = "INSERT INTO t_visiteur_vis VALUES ('" . $ticket . "',NULL,'" . $mdp . "', now(), NULL, NULL,NULL,'" . $_SESSION['login'] . "'); ";
-            $resultat2 =   $resultat = $mysqli->query($requete2);
-            header("Location:admin_visiteurs.php");
-        }
+//Ajout Visiteur
+if ($_GET["tickets_ajout"] and $_GET["mdp"]) {
+    $ticket = htmlspecialchars($_GET['tickets_ajout']);
+    $mdp = htmlspecialchars($_GET['mdp']);
+    $requete = "select vis_num from t_visiteur_vis where vis_num = '" . $ticket . "';";
+    $resultat =   $resultat = $mysqli->query($requete);
+    if ($resultat->num_rows == 1) {
+        header("Location:admin_visiteurs.php");
+    } else {
+        $requete2 = "INSERT INTO t_visiteur_vis VALUES ('" . $ticket . "',NULL,'" . $mdp . "', now(), NULL, NULL,NULL,'" . $_SESSION['login'] . "'); ";
+        $resultat2 =   $resultat = $mysqli->query($requete2);
         header("Location:admin_visiteurs.php");
     }
+    header("Location:admin_visiteurs.php");
+}
 
 //modifier etat commentaire Publier/cacher
- if ($_GET["tickets_etat"] and $_GET["commentaire"])
-    {
-        $ticket_etat = htmlspecialchars($_GET['tickets_etat']);
-        $coms_num = htmlspecialchars($_GET['commentaire']);
-        $requete = "update t_commentaire_com set t_com_etat = '" .$ticket_etat. "' where com_num = '".$coms_num."'  ;";
-         $resultat = $mysqli->query($requete);
-        header("Location:admin_visiteurs.php");
-    } 
- $mysqli->close(); 
+if ($_GET["tickets_etat"] and $_GET["commentaire"]) {
+    $ticket_etat = htmlspecialchars($_GET['tickets_etat']);
+    $coms_num = htmlspecialchars($_GET['commentaire']);
+    $requete = "update t_commentaire_com set t_com_etat = '" . $ticket_etat . "' where com_num = '" . $coms_num . "'  ;";
+    $resultat = $mysqli->query($requete);
+    header("Location:admin_visiteurs.php");
+}
+$mysqli->close();
 ?>

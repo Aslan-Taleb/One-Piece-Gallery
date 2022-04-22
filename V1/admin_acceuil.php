@@ -1,10 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION['login']))
-{
+if (!isset($_SESSION['login'])) {
     //Si la session n'est pas ouverte, redirection vers la page du formulaire
     header("Location:session.php");
-
 }
 //connexion base
 $mysqli = new mysqli('localhost', 'ztalebas0', 'ij5d64wq', 'zfl2-ztalebas0');
@@ -69,7 +67,7 @@ if (!$mysqli->set_charset("utf8")) {
             <div class="container">
                 <div class="navbar-header">
 
-                    <a href = "index.php" class="site-title"><span>One Piece </span>Gallery</a>
+                    <a href="index.php" class="site-title"><span>One Piece </span>Gallery</a>
                 </div><!-- /.navbar-header -->
                 <div class="collapse navbar-collapse" id="agency-navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -93,11 +91,11 @@ d’afficher le détail de son profil. */
     // Visualisation du contenu d'une table (profile)
     $resultat = $mysqli->query($requete);
     if ($resultat == false) {
-                echo "erreur la requete a échoué";
-                echo "Errno" . $mysqli->errno . "\n";
-                echo "Error" . $mysqli->error . "\n";
-                exit();
-            }
+        echo "erreur la requete a échoué";
+        echo "Errno" . $mysqli->errno . "\n";
+        echo "Error" . $mysqli->error . "\n";
+        exit();
+    }
     $profile = $resultat->fetch_assoc();
     // Visualisation du contenu d'une table (profile) dans un tableau
     echo '<br> <br>';
@@ -107,11 +105,11 @@ d’afficher le détail de son profil. */
 
     echo "<table>";
     echo  "<tr>";
-    echo ('<th>' . "pfl_nom" . '</th>');
-    echo ('<th>' . "pfl_prenom" . '</th>');
-    echo ('<th>' . "pfl_mail" . '</th>');
-    echo ('<th>' . "pfl_role" . '</th>');
-    echo ('<th>' . "cpt_pseudo" . '</th>');
+    echo ('<th>' . "Nom" . '</th>');
+    echo ('<th>' . "Prenom" . '</th>');
+    echo ('<th>' . "Mail" . '</th>');
+    echo ('<th>' . "Role" . '</th>');
+    echo ('<th>' . "Pseudo" . '</th>');
     echo  "</tr>";
     echo  "<tr>";
     echo ('<td>' . $profile['pfl_nom'] . '</td>' . '<td>' . $profile['pfl_prenom'] . '</td>');
@@ -119,4 +117,5 @@ d’afficher le détail de son profil. */
     echo  "</tr>";
     echo "</table>";
     echo "<br><br>";
-?>
+    $mysqli->close();
+    ?>

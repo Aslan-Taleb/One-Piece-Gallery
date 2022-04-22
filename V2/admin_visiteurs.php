@@ -1,13 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION['login']))
-{
+if (!isset($_SESSION['login'])) {
     //Si la session n'est pas ouverte, redirection vers la page du formulaire
     header("Location:session.php");
 }
-if ($_SESSION['role'] == 'O' )
-{
-      header("Location:admin_acceuil.php");
+if ($_SESSION['role'] == 'O') {
+    header("Location:admin_acceuil.php");
 }
 ?>
 <html>
@@ -142,28 +140,37 @@ if ($_SESSION['role'] == 'O' )
     echo ('<th>' . "Commentaire" . '</th>');
     echo ('<th>' . "Date" . '</th>');
     echo ('<th>' . "Etat commentaire" . '</th>');
+    echo ('<th>' . "Modifier" . '</th>');
+
     echo ('<th>' . "Supprimer Tickets" . '</th>');
     echo  "</tr>";
     while ($visiteur = $resultat->fetch_assoc()) {
         echo  "<tr>";
         echo ('<td>' . $visiteur['vis_num'] . '</td>' . '<td>' . $visiteur['cpt_pseudo'] . '</td>');
         echo ('<td>' . $visiteur['com_texte'] . '</td>' . '<td>' . $visiteur['vis_date_heure_publication'] . '</td>');
+        if ($visiteur['com_texte'] != '') {
+            if ($visiteur['t_com_etat'] == 'p') {
+                echo ('<td color ="green">' . "Publier" . '</td>');
+            } else {
+                echo ('<td color ="red">' . "Cacher" . '</td>');
+            }
+        } else {
+            echo "<td> </td>";
+        }
         //Bouton Cacher/Publier (envoie etat du commentaire + numero_commentaire)
         if ($visiteur['com_texte'] != '') {
             if ($visiteur['t_com_etat'] == 'p') {
-            	echo "<td style = font-family:georgia,garamond,serif;font-size:16px;font-style:italic; color : green>" . "<div align = center >";
-                echo "<a href='visiteurs_action.php?tickets_etat=" . $c . "&commentaire=". $visiteur['com_num']."'</a>";  
+                echo "<td style = font-family:georgia,garamond,serif;font-size:16px;font-style:italic; color : green>" . "<div align = center >";
+                echo "<a href='visiteurs_action.php?tickets_etat=" . $c . "&commentaire=" . $visiteur['com_num'] . "'</a>";
                 echo "Cacher</td>";
             }
-            if ($visiteur['t_com_etat'] == 'c') 
-            {
+            if ($visiteur['t_com_etat'] == 'c') {
                 echo "<td style = font-family:georgia,garamond,serif;font-size:16px;font-style:italic; color : green>" . "<div align = center >";
-                echo "<a href='visiteurs_action.php?tickets_etat=" . $p . "&commentaire=". $visiteur['com_num']."'</a>";  
-        		echo "Publier</td>";
+                echo "<a href='visiteurs_action.php?tickets_etat=" . $p . "&commentaire=" . $visiteur['com_num'] . "'</a>";
+                echo "Publier</td>";
             }
-        }
-        else {
-        echo "<td> </td>";
+        } else {
+            echo "<td> </td>";
         }
         //Bouton Supprimer (Envoie vis_num)
         echo "<td style = font-family:georgia,garamond,serif;font-size:16px;font-style:italic; color : 'green'>" . "<div align = center >";
@@ -182,21 +189,21 @@ if ($_SESSION['role'] == 'O' )
     //generation clé tickets + numéro du nouveau tickets
     $tickets_ajout = ($resultat->num_rows) + 1;
     $code = rand(111111111111111, 999999999999999);
-     
-    $requete = "Select vis_mot_de_passe from t_visiteur_vis where vis_num = '".$tickets_ajout."';";
-     $resultat = $mysqli->query($requete);
-    
 
-//Affichage clé visiteur 
-     echo '<center>';
-     echo "<h4>La prochaine clé Visiteur sera ".$code."</h4>";
-     echo '</center>';
-//bouton D'ajout de Tickets
-echo '<form action="admin_visiteurs.php" method="post">';
+    $requete = "Select vis_mot_de_passe from t_visiteur_vis where vis_num = '" . $tickets_ajout . "';";
+    $resultat = $mysqli->query($requete);
+
+
+    //Affichage clé visiteur 
+    echo '<center>';
+    echo "<h4>La prochaine clé Visiteur sera " . $code . "</h4>";
+    echo '</center>';
+    //bouton D'ajout de Tickets
+    echo '<form action="admin_visiteurs.php" method="post">';
     echo  "<div align = center>";
     echo "<a  class='btn btn-fill mb-10' value='Valider'  href='visiteurs_action.php?tickets_ajout=" . $tickets_ajout . "&mdp=" . $code . "'</a>";
     echo "Ajouter Ticket";
-
+    $mysqli->close();
     ?>
     <div style="text-align: right;">
         <a class="site-title"><span>© 2022 Taleb Aslan | L2 </span></a>

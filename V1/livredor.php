@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Basic Page Needs
@@ -35,7 +36,7 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
-   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 </head>
 
 <body>
@@ -62,7 +63,7 @@
         </nav><!-- /.site-navigation -->
     </header><!-- /#mastheaed -->
 
-     <div id="hero" class="hero overlay subpage-hero blog-hero">
+    <div id="hero" class="hero overlay subpage-hero blog-hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Livres d'or</h1>
@@ -77,7 +78,7 @@
                 <div class="sectiontitle">
                     <p class="nospace font-xs"></p>
                     <center>
-                        <h3 class="heading">COMMENTAIRE</h3>
+                        <h3 class="heading">COMMENTAIRES</h3>
                     </center>
                 </div>
                 <?php
@@ -98,19 +99,19 @@
                 //requete d'affichage commentaire si etat 'p'
                 $requete = "SELECT * FROM t_commentaire_com  JOIN t_visiteur_vis USING (vis_num) where t_com_etat = 'p';";
                 $result = $mysqli->query($requete);
-                 if ($result == false) {
-                echo "erreur la requete a échoué";
-                echo "Errno" . $mysqli->errno . "\n";
-                echo "Error" . $mysqli->error . "\n";
-                exit();
-            }
-                  //affichage commentaire
-                  echo "<table>";
-                  echo  "<tr>";
-                  echo ('<th>' . "Nom Visiteur" . '</th>');
-                  echo ('<th>' . "Commentaire" . '</th>');
-                  echo ('<th>' . "Date Publication" . '</th>');
-                  echo  "</tr>";
+                if ($result == false) {
+                    echo "erreur la requete a échoué";
+                    echo "Errno" . $mysqli->errno . "\n";
+                    echo "Error" . $mysqli->error . "\n";
+                    exit();
+                }
+                //affichage commentaire
+                echo "<table>";
+                echo  "<tr>";
+                echo ('<th>' . "Nom Visiteur" . '</th>');
+                echo ('<th>' . "Commentaire" . '</th>');
+                echo ('<th>' . "Date Publication" . '</th>');
+                echo  "</tr>";
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row['vis_nom'] . " " . $row['vis_prenom'] . "</td>";
@@ -122,23 +123,24 @@
                 //Ferme la connexion avec la base MariaDB
                 $mysqli->close();
                 ?>
-    </main><!-- /#main -->
-<div style="text-align: right;">
-        <a class="site-title"><span>© 2022 Taleb Aslan | L2 </span></a>
-        </div>
+                </main><!-- /#main -->
+                <div style="text-align: right;">
+                    <a class="site-title"><span>© 2022 Taleb Aslan | L2 </span></a>
+                </div>
 
 
-    <!-- Bootstrap core JavaScript
+                <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/jquery.slicknav.min.js"></script>
-    <script src="assets/js/jquery.countTo.min.js"></script>
-    <script src="assets/js/jquery.shuffle.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-    <script src="assets/js/script.js"></script>
-  
+                <!-- Placed at the end of the document so the pages load faster -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                <script src="assets/js/bootstrap.min.js"></script>
+                <script src="assets/js/bootstrap-select.min.js"></script>
+                <script src="assets/js/jquery.slicknav.min.js"></script>
+                <script src="assets/js/jquery.countTo.min.js"></script>
+                <script src="assets/js/jquery.shuffle.min.js"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+                <script src="assets/js/script.js"></script>
+
 </body>
+
 </html>

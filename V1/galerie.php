@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Basic Page Needs
@@ -26,6 +27,8 @@
     ================================================== -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+    <script src="https://binayak.codes/dark-theme-switcher/app.js"></script>
+    <link rel="stylesheet" href="https://binayak.codes/dark-theme-switcher/styles/style.css" />
 
     <!-- Stylesheets
     ================================================== -->
@@ -43,9 +46,10 @@
     <![endif]-->
 
 </head>
+
 <body>
 
-     <header id="masthead" class="site-header">
+    <header id="masthead" class="site-header">
         <nav id="primary-navigation" class="site-navigation">
             <div class="container">
 
@@ -63,6 +67,7 @@
                         <li><a href="livredor.php">LIVRE D'OR</a></li>
                         <li><a href="session.php">CONNEXION</a></li>
                     </ul>
+
                 </div>
             </div>
         </nav><!-- /.site-navigation -->
@@ -80,65 +85,62 @@
 
         <section class="site-section subpage-site-section section-portfolio">
             <div class="container">
-            <div id="grid" class="row">
-        
-    <?php
-    //connxeion base
-    $mysqli = new mysqli('localhost','ztalebas0','ij5d64wq','zfl2-ztalebas0');
-        if ($mysqli->connect_errno){
-            // Affichage d'un message d'erreur
-            echo "Error: Problème de connexion à la BDD \n";
-            echo "Errno: " . $mysqli->connect_errno . "\n";
-            echo "Error: " . $mysqli->connect_error . "\n";
-            // Arrêt du chargement de la page
-            exit();
-        }
-        // Instructions PHP à ajouter pour l'encodage utf8 du jeu de caractères
-        if (!$mysqli->set_charset("utf8")) {
-            printf("Pb de chargement du jeu de car. utf8 : %s\n", $mysqli->error);
-            exit(); 
-        }
-        // Recupuration information  contenu d'une table (Oeuvre)
-        
-        $requete="select oeuv_intitule,oeuv_description,oeuv_fichier_image,oeuv_date_creation from t_oeuvre_oeuv;";
-        $resultat = $mysqli->query($requete);
-        $ID = 1;
-        if($resultat == false){
-            echo"erreur la requete a échoué";
-            echo"Errno".$mysqli->errno."\n";
-            echo"Error".$mysqli->error."\n";
-            exit();
-        }else{
-            //Affiche Oeuvre
-            while ($oeuvre = $resultat->fetch_assoc())
-            {
+                <div id="grid" class="row">
 
-                echo '<div class="col-lg-3 col-md-4 col-xs-6" data-groups=["webdesign"]>';
-                echo '<div class="portfolio-item">';
-                echo '<img src="assets/img/'.$oeuvre['oeuv_fichier_image'].'" class="img-res" alt="">';
-                echo '<h4 class="portfolio-item-title">' .$oeuvre['oeuv_intitule'].'<br>'.$oeuvre['oeuv_date_creation'].'</h4>';
-                echo '<a href="oeuvre.php?id='. $ID .'"><i class="fa-solid fa-arrow-right">Descrption</i></a>';
-                 $ID++;
-                echo '</div>';
-                echo '</div>';
-            }
-        }
-               $mysqli->close();
-    ?>
-    <!--Bouton Load More-->
-    </div>
-    <div class="text-center">
-    <a class="btn btn-gray" href="#" id="loadMore">Plus</a>
-    </div>
+                    <?php
+                    //connxeion base
+                    $mysqli = new mysqli('localhost', 'ztalebas0', 'ij5d64wq', 'zfl2-ztalebas0');
+                    if ($mysqli->connect_errno) {
+                        // Affichage d'un message d'erreur
+                        echo "Error: Problème de connexion à la BDD \n";
+                        echo "Errno: " . $mysqli->connect_errno . "\n";
+                        echo "Error: " . $mysqli->connect_error . "\n";
+                        // Arrêt du chargement de la page
+                        exit();
+                    }
+                    // Instructions PHP à ajouter pour l'encodage utf8 du jeu de caractères
+                    if (!$mysqli->set_charset("utf8")) {
+                        printf("Pb de chargement du jeu de car. utf8 : %s\n", $mysqli->error);
+                        exit();
+                    }
+                    // Recupuration information  contenu d'une table (Oeuvre)
 
-            </div>
+                    $requete = "select oeuv_intitule,oeuv_description,oeuv_fichier_image,oeuv_date_creation from t_oeuvre_oeuv;";
+                    $resultat = $mysqli->query($requete);
+                    $ID = 1;
+                    if ($resultat == false) {
+                        echo "erreur la requete a échoué";
+                        echo "Errno" . $mysqli->errno . "\n";
+                        echo "Error" . $mysqli->error . "\n";
+                        exit();
+                    } else {
+                        //Affiche Oeuvre
+                        while ($oeuvre = $resultat->fetch_assoc()) {
+
+                            echo '<div class="col-lg-3 col-md-4 col-xs-6" data-groups=["webdesign"]>';
+                            echo '<div class="portfolio-item">';
+                            echo '<img src="assets/img/' . $oeuvre['oeuv_fichier_image'] . '" class="img-res" alt="">';
+                            echo '<center>';
+                            echo '<br><br>';
+                            echo '<h2 class="portfolio-item-title">' . $oeuvre['oeuv_intitule'] . '<br>' . $oeuvre['oeuv_date_creation'] . '</h2>';
+                            echo '<a href="oeuvre.php?id=' . $ID . '"><i class="fa-solid fa-arrow-right">Descrption</i></a>';
+                            echo '</center>';
+                            $ID++;
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    }
+                    $mysqli->close();
+                    ?>
+
+                </div>
         </section>
 
     </main>
-</main>
-        <div style="text-align: right;">
+    </main>
+    <div style="text-align: right;">
         <a class="site-title"><span>© 2022 Taleb Aslan | L2 </span></a>
-        </div>
+    </div>
 
 
 
@@ -230,6 +232,7 @@
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/jquery.shuffle.min.js"></script>
     <script src="assets/js/script.js"></script>
-  
+
 </body>
+
 </html>

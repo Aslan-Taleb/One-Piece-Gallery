@@ -22,6 +22,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://binayak.codes/dark-theme-switcher/app.js"></script>
+    <link rel="stylesheet" href="https://binayak.codes/dark-theme-switcher/styles/style.css" />
 
     <!-- Favicon
     ================================================== -->
@@ -105,9 +107,9 @@
                 echo ('<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic; color : black">' . "Lieu : " . $config['config_lieu'] . '</p>');
                 echo ('<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic; color : black">' . "Date Vernissage : " .  $config['config_date_vernissage'] . '</p>');
                 echo ('<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic; color : black">' . $config['config_texte_bienvenue'] . '</p>');
-                 echo '<div class="text-center mt-20">';
-				echo '<a href = galerie.php> <input class="btn btn-gray" type="submit" value="Visiter ! "> </a>';
-				echo '</div>';
+                echo '<div class="text-center mt-20">';
+                echo '<a href = galerie.php> <input class="btn btn-gray" type="submit" value="Visiter ! "> </a>';
+                echo '</div>';
                 echo ('</center>');
             }
             ?>
@@ -117,7 +119,9 @@
             <br><br><br>
             <center>
                 <h2>DERNIÈRES ACTUALITÉS</h2>
-               
+                <script>
+                    window.ThemeSwitcher().Init();
+                </script>
                 <?php
                 // Visualisation du contenu d'une table (actu)
                 $requete = "SELECT * FROM t_news_new;";
@@ -143,15 +147,15 @@
                     }
                     echo "</table>";
                 }
-                       $mysqli->close();
+                $mysqli->close();
                 ?>
             </center>
         </section>
         <br><br><br>
     </main><!-- /#main -->
-    	<div style="text-align: right;">
+    <div style="text-align: right;">
         <a class="site-title"><span>© 2022 Taleb Aslan | L2 </span></a>
-        </div>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

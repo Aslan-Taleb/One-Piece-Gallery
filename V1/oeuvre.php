@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Basic Page Needs
@@ -43,9 +44,10 @@
     <![endif]-->
 
 </head>
+
 <body>
     <header id="masthead" class="site-header">
-    <nav id="primary-navigation" class="site-navigation">
+        <nav id="primary-navigation" class="site-navigation">
             <div class="container">
 
                 <div class="navbar-header">
@@ -57,7 +59,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.php">ACCUEIL</a></li>
-                        <li ><a href="galerie.php" >FIGURINES<i class="fa fa-caret-down hidden-xs" aria-hidden="true"></i></a>
+                        <li><a href="galerie.php">FIGURINES<i class="fa fa-caret-down hidden-xs" aria-hidden="true"></i></a>
                         </li>
                         <li><a href="livredor.php">LIVRE D'OR</a></li>
                         <li><a href="session.php">CONNEXION</a></li>
@@ -77,10 +79,10 @@
 
     <main id="main" class="site-main">
 
-<?php
-//connexion base
-$mysqli = new mysqli('localhost','ztalebas0','ij5d64wq','zfl2-ztalebas0');
-        if ($mysqli->connect_errno){
+        <?php
+        //connexion base
+        $mysqli = new mysqli('localhost', 'ztalebas0', 'ij5d64wq', 'zfl2-ztalebas0');
+        if ($mysqli->connect_errno) {
             // Affichage d'un message d'erreur
             echo "Error: Problème de connexion à la BDD \n";
             echo "Errno: " . $mysqli->connect_errno . "\n";
@@ -91,45 +93,45 @@ $mysqli = new mysqli('localhost','ztalebas0','ij5d64wq','zfl2-ztalebas0');
         // Instructions PHP à ajouter pour l'encodage utf8 du jeu de caractères
         if (!$mysqli->set_charset("utf8")) {
             printf("Pb de chargement du jeu de car. utf8 : %s\n", $mysqli->error);
-            exit(); 
-        }  
-        //recuperation oeuvre en fonction du id recuperer
-          $id=$_GET['id'] ;
-          $requete_oeuvre = "select * from t_oeuvre_oeuv where oeuv_code =  ".$id.";";
-          $exposant = "select exp_nom from t_exposant_exp join t_presente_pres using(exp_id) where oeuv_code =  ".$id.";";
-
-echo '<section class="site-section subpage-site-section section-project">';
-echo '';
-echo '<div class="container">';
-echo '<div class="row">';
-echo '<div class="col-md-8">';
-echo '<div class="project-img">';
-
- $resultat1 = $mysqli->query($requete_oeuvre);
-        if($resultat1 == false){
-            echo"erreur la requete a échoué";
-            echo"Errno".$mysqli->errno."\n";
-            echo"Error".$mysqli->error."\n";
             exit();
-        }else{
+        }
+        //recuperation oeuvre en fonction du id recuperer
+        $id = $_GET['id'];
+        $requete_oeuvre = "select * from t_oeuvre_oeuv where oeuv_code =  " . $id . ";";
+        $exposant = "select exp_nom from t_exposant_exp join t_presente_pres using(exp_id) where oeuv_code =  " . $id . ";";
+
+        echo '<section class="site-section subpage-site-section section-project">';
+        echo '';
+        echo '<div class="container">';
+        echo '<div class="row">';
+        echo '<div class="col-md-8">';
+        echo '<div class="project-img">';
+
+        $resultat1 = $mysqli->query($requete_oeuvre);
+        if ($resultat1 == false) {
+            echo "erreur la requete a échoué";
+            echo "Errno" . $mysqli->errno . "\n";
+            echo "Error" . $mysqli->error . "\n";
+            exit();
+        } else {
             $oeuvre = $resultat1->fetch_assoc();
             $exposant = $resultat1->fetch_assoc();
-            echo '<img src=assets/img/'.$oeuvre['oeuv_fichier_image'].' class="img-res" alt="">';
+            echo '<img src=assets/img/' . $oeuvre['oeuv_fichier_image'] . ' class="img-res" alt="">';
             echo '</div><!-- /.project-img -->';
             echo '</div>';
             echo '<aside class="col-md-4">';
             echo '<div class="project-info">';
-            echo '<h5><span></span>'.$oeuvre['oeuv_intitule'].'</h5>';
+            echo '<h5><span></span>' . $oeuvre['oeuv_intitule'] . '</h5>';
             echo '<br>';
             echo '<h>Description : </h6>';
             echo '<br>';
-            echo ''.$oeuvre['oeuv_description'].'';
+            echo '' . $oeuvre['oeuv_description'] . '';
             echo '<p class="project-description"></p>';
             echo '';
             echo '<div class="project-date-category">';
-            echo 'Date de Creation : '.$oeuvre['oeuv_date_creation'].'';
+            echo 'Date de Creation : ' . $oeuvre['oeuv_date_creation'] . '';
             echo '<br><br>';
-            echo '<a href="exposant.php?id='. $id .'"><h4>Exposant'.$exposant['exp_nom'].'<a/>'.'</h4>';
+            echo '<a href="exposant.php?id=' . $id . '"><h4>Exposant' . $exposant['exp_nom'] . '<a/>' . '</h4>';
             echo '</div><!-- /.project-cat -->';
             echo '';
             echo '</div><!-- /.project-description -->';
@@ -138,14 +140,14 @@ echo '<div class="project-img">';
             echo '</div>';
             echo '';
             echo '</section><!-- /.section-project -->';
-            }
- $mysqli->close();
-?>    
-</main><!-- /#main -->
+        }
+        $mysqli->close();
+        ?>
+    </main><!-- /#main -->
 
-<div style="text-align: right;">
+    <div style="text-align: right;">
         <a class="site-title"><span>© 2022 Taleb Aslan | L2 </span></a>
-        </div>
+    </div>
 
 
 
@@ -159,6 +161,7 @@ echo '<div class="project-img">';
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/jquery.shuffle.min.js"></script>
     <script src="assets/js/script.js"></script>
-  
+
 </body>
+
 </html>

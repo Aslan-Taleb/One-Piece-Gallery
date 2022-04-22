@@ -55,7 +55,6 @@ else
     echo ("<a href = 'session.php'>RETOUR</a>");
     echo "</center>";
 }
- $mysqli->close();
 ?>
 <div style="text-align: right;">
         <a class="site-title"><span>© 2022 Taleb Aslan | L2 </span></a>

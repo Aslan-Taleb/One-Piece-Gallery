@@ -67,9 +67,9 @@ $(function () {
         setupFilters();
       }, 100);
 
-      $("#grid .col-md-4").slice(0, 4).show();
+      $("#grid .col-md-4").slice(0, 16).show();
 
-      $("#loadMore").on('click', function(e) {
+      /*$("#loadMore").on('click', function(e) {
         e.preventDefault();
         $("#grid .col-md-4:hidden")
           .slice(0, 4)
@@ -81,7 +81,7 @@ $(function () {
         if($("#grid .col-md-4:hidden").length == 0){
           $("#loadMore").addClass("disabled").html("No more to Load");
         } 
-      });
+      });*/
 
       // instantiate the plugin
       $grid.shuffle({

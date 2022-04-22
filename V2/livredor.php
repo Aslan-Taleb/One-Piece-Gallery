@@ -69,7 +69,7 @@
         </nav><!-- /.site-navigation -->
     </header><!-- /#mastheaed -->
 
-     <div id="hero" class="hero overlay subpage-hero blog-hero">
+    <div id="hero" class="hero overlay subpage-hero blog-hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Livres d'or</h1>
@@ -84,7 +84,7 @@
                 <div class="sectiontitle">
                     <p class="nospace font-xs"></p>
                     <center>
-                        <h3 class="heading">COMMENTAIRE</h3>
+                        <h3 class="heading">COMMENTAIRES</h3>
                     </center>
                 </div>
                 <?php
@@ -105,13 +105,13 @@
                 //requete d'affichage commentaire si etat 'p'
                 $requete = "SELECT * FROM t_commentaire_com  JOIN t_visiteur_vis USING (vis_num) where t_com_etat = 'p';";
                 $result = $mysqli->query($requete);
-                 if ($result == false) {
-                echo "erreur la requete a échoué";
-                echo "Errno" . $mysqli->errno . "\n";
-                echo "Error" . $mysqli->error . "\n";
-                exit();
-            }
-                  //affichage commentaire
+                if ($result == false) {
+                    echo "erreur la requete a échoué";
+                    echo "Errno" . $mysqli->errno . "\n";
+                    echo "Error" . $mysqli->error . "\n";
+                    exit();
+                }
+                //affichage commentaire
                 echo "<table>";
                 echo  "<tr>";
                 echo ('<th>' . "Nom Visiteur" . '</th>');
