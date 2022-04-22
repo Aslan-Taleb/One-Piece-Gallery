@@ -105,7 +105,12 @@
                 exit();
             }
                   //affichage commentaire
-                echo "<table>";
+                  echo "<table>";
+                  echo  "<tr>";
+                  echo ('<th>' . "Nom Visiteur" . '</th>');
+                  echo ('<th>' . "Commentaire" . '</th>');
+                  echo ('<th>' . "Date Publication" . '</th>');
+                  echo  "</tr>";
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row['vis_nom'] . " " . $row['vis_prenom'] . "</td>";

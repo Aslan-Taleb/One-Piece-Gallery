@@ -6,13 +6,11 @@ if (!isset($_SESSION['login']))
     header("Location:session.php");
 }
 //verification champs saisie
- if ($_POST["mdp"] and $_POST["mdp_verif"] and $_POST["nom"] and $_POST["prenom"] and $_POST["mail"])
+ if ($_POST["mdp"] and $_POST["mdp_verif"] and $_POST["mail"])
     {
     $id=$_SESSION['login'];
     $mdp=htmlspecialchars($_POST['mdp']);
     $mdp_verif = htmlspecialchars($_POST['mdp_verif']);
-    $nom =htmlspecialchars($_POST['nom']);
-    $prenom = htmlspecialchars($_POST['prenom']);
     $mail =  htmlspecialchars($_POST['mail']);
     //verification Mot de passe et Mot de passe verifié 
     if (strcmp($mdp,$mdp_verif) != 0)
@@ -47,7 +45,7 @@ if (!isset($_SESSION['login']))
 
     else{
         //requete modifiation Profile
-        $requete = "update t_profil_pfl set pfl_nom = '".$nom."' , pfl_prenom = '".$prenom."' , pfl_mail = '".$mail."' where cpt_pseudo = '" .$id."';";
+        $requete = "update t_profil_pfl set  pfl_mail = '".$mail."' where cpt_pseudo = '" .$id."';";
         $resultat = $mysqli->query($requete);
         //requete modifiation Compte
         $requete2 = "update t_compte_cpt set cpt_mot_de_passe = MD5('".$mdp."') where cpt_pseudo = '".$id."';";
@@ -85,5 +83,4 @@ else {
     echo ("<a href = 'admin_acceuil.php'>RETOUR</a>");
     echo "</center>";
 }
-$mysqli->close();
 ?>

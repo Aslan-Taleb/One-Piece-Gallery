@@ -131,9 +131,9 @@
                     //affichage Actualité
                     echo "<table>";
                     echo  "<tr>";
-                    echo ('<th>' . "new_titre" . '</th>');
-                    echo ('<th>' . "new_texte" . '</th>');
-                    echo ('<th>' . "new_date" . '</th>');
+                    echo ('<th>' . "Titre" . '</th>');
+                    echo ('<th>' . "News" . '</th>');
+                    echo ('<th>' . "Date News" . '</th>');
                     echo  "</tr>";
                     while ($actu = $resultat->fetch_assoc()) {
                         echo  "<tr>";

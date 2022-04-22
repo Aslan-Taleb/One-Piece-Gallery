@@ -166,7 +166,7 @@ d’afficher le détail de son profil. */
                     	//Bouton 'modifier' (envoie role/validité/pseudo a  comptes_actions) 
                         echo "<td style = font-family:georgia,garamond,serif;font-size:16px;font-style:italic; color : Black>" . "<div align = center >";
 
-                        echo "<a  href='modifier.php?role=" . $donnes['pfl_role'] . "&validité=" . $donnes['pfl_validite'] . "&pseudo=" . $donnes['cpt_pseudo'] . "'</a>";
+                        echo "<a  href='bouton_modifier.php?role=" . $donnes['pfl_role'] . "&validité=" . $donnes['pfl_validite'] . "&pseudo=" . $donnes['cpt_pseudo'] . "'</a>";
                         echo "Modifier</td>";
                         echo  "</tr>";
                     }
@@ -182,20 +182,6 @@ d’afficher le détail de son profil. */
             echo '<form action="modification_action.php" method="post">';
             echo '<div class="row" id="contenu">';
             echo '<div class="col-sm-12">';
-            echo '</div>';
-            echo '<div class="col-sm-12">';
-            echo '<div class="form-group">';
-            echo '<label for="email">Prenom:</label>';
-            echo '<input type="text" required
-            minlength="1"  class="form-control"  name="prenom" />';
-            echo '</div>';
-            echo '</div>';
-            echo '<div class="col-sm-12">';
-            echo '<div class="form-group">';
-            echo '<label >Nom:</label>';
-            echo '<input type="text" required
-            minlength="1" class="form-control" name="nom" />';
-            echo '</div>';
             echo '</div>';
             echo '<div class="col-sm-12 mt-20">';
             echo '<div class="form-group">';

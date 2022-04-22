@@ -113,12 +113,17 @@
             }
                   //affichage commentaire
                 echo "<table>";
+                echo  "<tr>";
+                echo ('<th>' . "Nom Visiteur" . '</th>');
+                echo ('<th>' . "Commentaire" . '</th>');
+                echo ('<th>' . "Date Publication" . '</th>');
+                echo  "</tr>";
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
+                    echo  "<tr>";
                     echo "<td>" . $row['vis_nom'] . " " . $row['vis_prenom'] . "</td>";
                     echo "<td>" . $row['com_texte'] . "</td>";
                     echo "<td>" . $row['com_date_heure_publication'] . "</td>";
-                    echo "</tr>";
+                    echo  "</tr>";
                 }
                 echo "</table>";
                 //Ferme la connexion avec la base MariaDB
@@ -132,13 +137,13 @@
                     </center>
                     <div id="comments">
                         <form action="commentaire_action.php" method="post">
-                            <p>Votre numero de visiteur : <input type="text" required minlength="1" class="form-control" name="vis_id" /></p>
-                            <p>Votre clé ticket(15 caractères ) : <input type="password" required minlength="15" maxlength="15" class="form-control" name="mdp" /></p>
+                            <p>Entrez le numéro de votre ticket : <input type="text" required minlength="1" class="form-control" name="vis_id" /></p>
+                            <p>Entrez le code secret de 15 caractères : <input type="password" required minlength="15" maxlength="15" class="form-control" name="mdp" /></p>
                             </p>
-                            <p>Votre Nom : <input type="text" class="form-control" name="nom" /></p>
-                            <p>Votre Prenom : <input type="text" class="form-control" name="prenom" /></p>
-                            <p>Votre Mail : <input type="text" class="form-control" name="mail" /></p>
-                            <p>Votre commentaire : <input type="text" class="form-control" minlength="1" name="commentaire" />
+                            <p>Entrez votre nom : <input type="text" class="form-control" name="nom" /></p>
+                            <p>Entrez votre prénom : <input type="text" class="form-control" name="prenom" /></p>
+                            <p>Entrez votre adresse mail : <input type="text" class="form-control" name="mail" /></p>
+                            <p>Entrez votre commentaire (Max 200 caractères): <input type="text" class="form-control" minlength="1" maxlength="200" name="commentaire" />
                             <div class="text-center mt-20">
                                 <input class="btn btn-fill mb-10" type="submit" value="Valider">
                             </div>
