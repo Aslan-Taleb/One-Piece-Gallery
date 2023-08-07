@@ -33,12 +33,19 @@ Les exposants peuvent présenter leurs figurines en se connectant à leurs profi
 Cette application a été développée en utilisant les outils et langages suivants :
 
 Langages de programmation : PHP, HTML, CSS, JavaScript
+
 Base de données : MariaDB
+
 Langage de requêtes : SQL
+
 Serveur web : Apache
+
 Client FTP : FileZilla (pour le déploiement)
+
 Éditeurs de code : Visual Studio Code
+
 Navigateurs web : Google Chrome (pour tester et utiliser l'application)
+
 
 # Avertissement:
 Veuillez noter que ce projet est purement fictif et a été développé dans le cadre des exigences définies pour mon cursus universitaire en L2 Informatique. Les détails, les spécifications et les fonctionnalités présentés ici sont imaginaires et ont été créés dans le but de démontrer les compétences et les connaissances acquises dans le domaine de l'informatique et du développement d'applications web.
