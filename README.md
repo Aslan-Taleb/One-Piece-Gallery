@@ -7,6 +7,8 @@
 Ce dépôt contient le code source de mon **tout premier projet en informatique**, une application de gestion d'exposition en ligne axée sur la présentation d'une galerie de figurines One Piece. L'application est conçue pour être accessible via un navigateur web, principalement dans le contexte d'une exposition artistique.
 
 # Introduction:
+![Image of My Project](screen_op_2.jpg)
+![Image of My Project](screen_op_1.jpg)
 
 L'Application Web d'Exposition est développée pour répondre aux besoins spécifiques des expositions artistiques, en mettant particulièrement en avant une galerie de figurines One Piece. Cette application vise à offrir aux visiteurs une expérience fluide pour explorer les figurines exposées et obtenir des informations sur les artistes, leurs créations et d'autres détails pertinents.
 
