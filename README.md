@@ -1,6 +1,6 @@
 # Application Web d'Exposition - Galerie de Figurines One Piece
 
-Ce dépôt contient le code source d'une application de gestion d'exposition en ligne axée sur la présentation d'une galerie de figurines One Piece. L'application est conçue pour être accessible via un navigateur web, principalement dans le contexte d'une exposition artistique.
+Ce dépôt contient le code source de mon *tout premier projet en informatique*, une application de gestion d'exposition en ligne axée sur la présentation d'une galerie de figurines One Piece. L'application est conçue pour être accessible via un navigateur web, principalement dans le contexte d'une exposition artistique.
 
 # Introduction:
 
