@@ -1,4 +1,8 @@
-# Application Web d'Exposition - Galerie de Figurines One Piece
+<p align="center">
+<img width="" src="https://i.skyrock.net/3315/85713315/pics/3149528432_1_12_YQdpa2Aa.gif" align="center" alt="gif" />
+<h1 align="center">Galerie de Figurines One Piece 🏴‍☠️
+</h1>
+</p>
 
 Ce dépôt contient le code source de mon **tout premier projet en informatique**, une application de gestion d'exposition en ligne axée sur la présentation d'une galerie de figurines One Piece. L'application est conçue pour être accessible via un navigateur web, principalement dans le contexte d'une exposition artistique.
 
@@ -54,6 +58,10 @@ Les détails, les spécifications et les fonctionnalités présentés ici sont i
 
 Pour plus de contexte et de détails sur les exigences de ce projet,veuillez consulter le document complet du Cahier des Charges : 
 Cahier des Charges : [L2_Cahier_des_Charges.pdf](https://github.com/Aslan-Taleb/One-Piece-Gallery/files/8543541/L2_Cahier_des_Charges.pdf)
+
+---
+
+@Aslan-Taleb 🏴‍☠️ 2022
 
 
 
