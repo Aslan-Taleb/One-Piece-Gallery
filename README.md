@@ -48,7 +48,10 @@ Navigateurs web : Google Chrome (pour tester et utiliser l'application)
 
 
 # Avertissement:
-Veuillez noter que ce projet est purement fictif et a été développé dans le cadre des exigences définies pour mon cursus universitaire en L2 Informatique. Les détails, les spécifications et les fonctionnalités présentés ici sont imaginaires et ont été créés dans le but de démontrer les compétences et les connaissances acquises dans le domaine de l'informatique et du développement d'applications web.
+Veuillez noter que ce projet est purement fictif et a été développé dans le cadre des exigences définies pour mon cursus universitaire en L2 Informatique.
+
+Les détails, les spécifications et les fonctionnalités présentés ici sont imaginaires et ont été créés dans le but de démontrer les compétences et les connaissances acquises dans le domaine de l'informatique et du développement d'applications web.
+
 Pour plus de contexte et de détails sur les exigences de ce projet,veuillez consulter le document complet du Cahier des Charges : 
 Cahier des Charges : [L2_Cahier_des_Charges.pdf](https://github.com/Aslan-Taleb/One-Piece-Gallery/files/8543541/L2_Cahier_des_Charges.pdf)
 
